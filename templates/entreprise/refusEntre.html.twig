@@ -1,0 +1,85 @@
+{% extends "baseSupAd.html.twig" %}
+
+{% block stylesheets %} {{  parent() }} {% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+
+
+
+
+<div class="row bg-title">
+ 
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Refus de stage</h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                    <o class="breadcrumb">
+                        <li>Entreprise </li>
+                        <li class="active"> Motif de refus</li>
+                    </o>
+                </div>
+                
+                <!-- /.col-lg-12 -->
+            </div>
+
+ <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title m-b-0">Thème du projet : <B>  {{ candidature.offre.titre|raw }}</B></h3>
+                            <p class="text-muted m-b-30"> Entreprise mail:<B> {{ candidature.offre.entreprise.user.email|raw }}</B> </p>
+                            {{ form_start(form,{'attr':{'data-toogle':'validator'}}) }} 
+                            
+                                <div class="form-group">
+                                    
+                                
+                                </div>
+                                
+                                <div class="form-group">
+                                    
+                                    
+                                     {{form_row(form.message)}}
+                                    <span class="help-block with-errors">Rédigez les motifs du refus</span> </div>
+                                
+                               
+                               
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-rounded btn-sm btn-primary">valider</button>
+                                </div>
+
+                               </div>
+
+
+                                   
+                </div>
+            </div>
+        </div>
+    </div>
+            
+                            
+
+  {{ form_end(form) }}
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block javascript %} 
+
+
+
+
+
+
+
+
+{{  parent() }}
+
+ {% endblock %}

@@ -1,0 +1,24 @@
+{% extends "baseSupAd.html.twig" %}
+
+{% block stylesheets %} {{  parent() }} {% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+
+<!-- .row -->
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="white-box">
+                        <h3 class="box-title">Votre compte a été bien activé. Cliquez sur le bouton connexion pour retourner sur la page de connexion</h3>
+                        <a href="{{ path('app_login') }}"><button type="button" class="btn btn-success">connexion</button></a>
+                     </div>
+                  </div>
+               </div>
+               <!-- .row -->
+
+
+{% endblock %}
+
+{% block javascript %} {{  parent() }} {% endblock %}

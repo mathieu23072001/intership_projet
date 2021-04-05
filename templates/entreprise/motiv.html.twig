@@ -1,0 +1,40 @@
+{% extends "baseSupAd.html.twig" %}
+
+{% block stylesheets %} {{  parent() }} {% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+
+
+
+<div class="row bg-title">
+ 
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h5 class="page-title"><B>Motivation de {{candidature.etudiant.nom}}  {{candidature.etudiant.prenoms}}</B> </h5>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                    <o class="breadcrumb">
+                        <li>Entreprise </li>
+                        <li class="active"> lettre de motivation</li>
+                    </o>
+                </div>
+                
+                <!-- /.col-lg-12 -->
+            </div>
+
+<!-- .row -->
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="white-box">
+                        <h3 class="box-title">{{ candidature.message|striptags|u.truncate(50, '...') }} </h3>
+                     </div>
+                  </div>
+               </div>
+               <!-- .row -->
+
+
+{% endblock %}
+
+{% block javascript %} {{  parent() }} {% endblock %}

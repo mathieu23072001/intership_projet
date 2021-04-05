@@ -1,0 +1,75 @@
+<!-- MENU -->
+
+
+    <!-- Left navbar-header -->
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+            <ul class="nav" id="side-menu">
+                <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+                    <!-- input-group -->
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" placeholder="Search{{ asset('optimum.')}}"> <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
+                        </span> </div>
+                    <!-- /input-group -->
+                </li>
+                <li class="user-pro">
+                    <a href="#" class="waves-effect"><img src="{{ asset('optimum/images/admin.jpg')}}" alt="user-img" class="img-circle"> <span class="hide-menu"><!--<?php echo $this->session->userdata('name'); ?>--><span class="fa arrow"></span></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="javascript:void(0)"><i class="ti-user"></i> Mon profile</a></li>
+                       
+                        <li><a href="{{ path('security_login') }}"><i class="fa fa-power-off"></i> Logout</a></li>
+                    </ul>
+                </li>
+                <li> <a href="<?php echo base_url('admin/dashboard') ?>" class="waves-effect"><i class="ti-dashboard p-r-10"></i> <span class="hide-menu">Tableau de bord</span></a> </li>
+                <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-user p-r-10"></i> <span class="hide-menu">Enregistrer un electeur <span class="fa arrow"></span><span class="label label-rouded label-danger pull-right">3</span></span></a>
+                    <ul class="nav nav-second-level">
+                        
+                            <li> <a href="{{ path('app_electeur_edit') }}"><i class="fa fa-plus p-r-10"></i><span class="hide-menu">Nouvel electeur</span></a></li>
+                            <li> <a href="{{ path('app_electeurList_index') }}"><i class="fa fa-plus p-r-10"></i><span class="hide-menu">liste des electeurs</span></a></li>
+                             <li> <a href="{{ path('app_crv_edit') }}"><i class="fa fa-plus p-r-10"></i><span class="hide-menu">generer un duplicata de carte</span></a></li>
+                            
+                        
+                
+                    </ul>
+                </li>
+                <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-envelope p-r-10"></i> <span class="hide-menu">Enregistrer un contentieux <span class="fa arrow"></span><span class="label label-rouded label-danger pull-right">6</span></span></a>
+                    <ul class="nav nav-second-level">
+                        <li> <a href="{{ path('app_localiteListe_index') }}">Nouveaux contentieux</a></li>
+                        <li> <a href="{{ path('app_celiList_index') }}">Liste des contentieux</a></li>
+                        
+                        
+                    </ul>
+                </li>
+
+                <li> <a href="#" class="waves-effect"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Enregistrer un transfert d'electeur<span class="fa arrow"></span> <span class="label label-rouded label-info pull-right">25</span> </span></a>
+                    <ul class="nav nav-second-level">
+                         <li> <a href="{{ path('app_Operat_edit') }}"><i class="fa fa-plus p-r-10"></i><span class="hide-menu">Demande de transfert </span></a></li>
+                         <li> <a href="{{ path('app_operatList_index') }}"><i class="fa fa-plus p-r-10"></i><span class="hide-menu">Liste des demandes de transfert</span></a></li>
+                          
+                        
+                        
+                        
+                    </ul>
+                </li>
+
+                <li> <a href="#" class="waves-effect"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Consulter statistiques<span class="fa arrow"></span> <span class="label label-rouded label-info pull-right">25</span> </span></a>
+                    <ul class="nav nav-second-level">
+                         <li> <a href="{{ path('app_localite_edit') }}"><i class="fa fa-plus p-r-10"></i><span class="hide-menu">Liste des electeurs enregistres</span></a></li>
+                         <li> <a href="{{ path('app_localite_edit') }}"><i class="fa fa-plus p-r-10"></i><span class="hide-menu">Liste des transferts demandes</span></a></li>
+                        <li> <a href="{{ path('app_localite_edit') }}"><i class="fa fa-plus p-r-10"></i><span class="hide-menu">Liste des contentieux enregistres</span></a></li>
+                        <li> <a href="{{ path('app_localite_edit') }}"><i class="fa fa-plus p-r-10"></i><span class="hide-menu">Liste des duplicata effectues</span></a></li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+
+               
+
+                <li><a href="{{ path('security_login') }}" class="waves-effect"><i class="icon-logout fa-fw"></i> <span class="hide-menu">Log out</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Left navbar-header end -->

@@ -1,0 +1,414 @@
+
+
+<!-- Preloader -->
+<!--<div class="preloader">
+    <div class="cssload-speeding-wheel"></div>
+*</div> -->
+<div id="wrapper">
+    <!-- Navigati*on -->
+    <nav class="navbar navbar-default navbar-static-top m-b-0">
+        <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="icon-grid"></i></a>
+            <div class="top-left-part"><a class="logo" href="{{ asset('optimum/togo.svg.png" alt="Codeig')}}"><span class="hidden-xs"></span></a></div>
+            <ul class="nav navbar-top-links navbar-left hidden-xs">
+                <li><a href="javascript:void(0)" class="open-close hidden-xs"><i class="icon-grid"></i></a></li>
+
+            </ul>
+              
+            <ul class="nav navbar-top-links navbar-right pull-right">
+                <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-fax"></i>
+
+                        <div class=""><span class=""></span><span class="point"></span></div>
+                    </a>
+
+                    <ul class="dropdown-menu  animated bounceInDown">
+
+
+                        <!-- calculator-->
+                        <style>
+                            .calculator_button {
+                                border: 1px solid #303641;
+                                width: 50px;
+                                background-color: #5A606C;
+                                color: #F5FAFC;
+                                cursor: auto;
+                            }
+
+                            .calculator_button:hover {
+                                border: 1px solid #303641;
+                                background-color: #5A606C;
+                                color: #F5FAFC;
+                            }
+
+                            .calculator_button:focus {
+                                border: 1px solid #303641;
+                                background-color: #5A606C;
+                                color: #F5FAFC;
+                            }
+                        </style>
+                        <form name="form1" onsubmit="return false">
+                            <table style="">
+                                <tr>
+                                    <td colspan="4"><input type="text" id="display" style="width:100%; border:0px; background-color:#303641;text-align: right;  font-size: 24px;  font-weight: 100;  color: #fff;" readonly placeholder="0" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"><button type="button" class="btn btn-default calculator_button" style="width:100%;" onclick="reset()">Clear</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="displaynum(7)">7</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="displaynum(8)">8</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="displaynum(9)">9</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="operator(&quot;+&quot;)">+</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="displaynum(4)">4</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="displaynum(5)">5</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="displaynum(6)">6</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="operator(&quot;-&quot;)">-</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="displaynum(1)">1</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="displaynum(2)">2</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="displaynum(3)">3</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="operator(&quot;*&quot;)">&times;</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="displaynum(0)">0</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="displaynum(&quot;.&quot;)">.</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="equals()">=</button></td>
+                                    <td><button type="button" class="btn btn-default calculator_button" onclick="operator(&quot;/&quot;)">&divide;</button></td>
+                                </tr>
+                            </table>
+                        </form>
+
+                    </ul>
+
+
+
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+
+
+
+
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-language"></i>
+
+                            <div class=""><span class=""></span><span class="point"></span></div>
+                        </a>
+
+                        <ul class="dropdown-menu  animated bounceInDown">
+
+
+                            <li class="active">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/english.png')}}" style="width:16px; height:16px;" />
+                                    <span>English</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/arabic.png')}}" style="width:16px; height:16px;" />
+                                    <span>Arabic</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/german.png')}}" style="width:16px; height:16px;" />
+                                    <span>German</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/dutch.png')}}" style="width:16px; height:16px;" />
+                                    <span>Dutch</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/french.png')}}" style="width:16px; height:16px;" />
+                                    <span>French</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/bengali.png')}}" style="width:16px; height:16px;" />
+                                    <span>Bengali</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/italian.png')}}" style="width:16px; height:16px;" />
+                                    <span>Italian</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/russian.png')}}" style="width:16px; height:16px;" />
+                                    <span>Russian</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/spanish.png')}}" style="width:16px; height:16px;" />
+                                    <span>Spanish</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/thai.png')}}" style="width:16px; height:16px;" />
+                                    <span>Thai</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/turkish.png')}}" style="width:16px; height:16px;" />
+                                    <span>Turkish</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/greek.png')}}" style="width:16px; height:16px;" />
+                                    <span>Greek</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/urdu.png')}}" style="width:16px; height:16px;" />
+                                    <span>Urdu</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/indonesian.png')}}" style="width:16px; height:16px;" />
+                                    <span>Indonesian</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/hungarian.png')}}" style="width:16px; height:16px;" />
+                                    <span>Hungarian</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="">
+                                    <img src="{{ asset('optimum/flag/hindi.png')}}" style="width:16px; height:16px;" />
+                                    <span>Hindi</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+
+
+                        <!-- /.dropdown-messages -->
+                    </li>
+                    <!-- /.dropdown -->
+
+
+
+
+
+                    <ul class="nav navbar-top-links navbar-right pull-right">
+                        <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-screen-desktop"></i>
+                                <div class="notify"><span class=""></span><span class=""></span></div>
+                            </a>
+                            <ul class="dropdown-menu mailbox animated bounceInRight">
+                                <li>
+                                    <div class="drop-title">You have 4 new messages</div>
+                                </li>
+                                <li>
+                                    <div class="message-center">
+                                        <a href="#">
+                                            <div class="user-img"> <img src="{{ asset('optimum/plugins/images/users/pawandeep.jpg')}}" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                            <div class="mail-contnet">
+                                                <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="user-img"> <img src="{{ asset('optimum/plugins/images/users/sonu.jpg')}}" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                            <div class="mail-contnet">
+                                                <h5>Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="user-img"> <img src="{{ asset('optimum/plugins/images/users/arijit.jpg')}}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                            <div class="mail-contnet">
+                                                <h5>Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="user-img"> <img src="{{ asset('optimum/plugins/images/users/pawandeep.jpg')}}" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                            <div class="mail-contnet">
+                                                <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="text-center" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                                </li>
+                            </ul>
+                            <!-- /.dropdown-messages -->
+                        </li>
+                        <!-- /.dropdown -->
+
+                        <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-feed"></i>
+                                <div class="notify"><span class=""></span><span class=""></span></div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-tasks animated bounceInRight">
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p> <strong>Task 1</strong> <span class="pull-right text-muted">40% Complete</span> </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p> <strong>Task 2</strong> <span class="pull-right text-muted">20% Complete</span> </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"> <span class="sr-only">20% Complete</span> </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p> <strong>Task 3</strong> <span class="pull-right text-muted">60% Complete</span> </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"> <span class="sr-only">60% Complete (warning)</span> </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p> <strong>Task 4</strong> <span class="pull-right text-muted">80% Complete</span> </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> <span class="sr-only">80% Complete (danger)</span> </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a class="text-center" href="#"> <strong>See All Tasks</strong> <i class="fa fa-angle-right"></i> </a>
+                                </li>
+                            </ul>
+                            <!-- /.dropdown-tasks -->
+                        </li>
+                        <!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="{{ asset('optimum/images/admin.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"> <b class="hidden-xs"> {{ app.user.email|default('undefined') }}</b> </a>
+                            <ul class="dropdown-menu dropdown-user animated flipInY">
+                                <li><a href="#"><i class="ti-user"></i> Mon profil</a></li>
+                                
+                                <li><a href="#"></i> Changer mot de passe</a></li>
+                                <li><a href="#"><i class="fa fa-power-off"></i> deconnexion</a></li>
+                            </ul>
+                            <!-- /.dropdown-user -->
+                        </li>
+                        <!--<li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a></li>-->
+                        <!-- /.dropdown -->
+                    </ul>
+        </div>
+        <!-- /.navbar-header -->
+        <!-- /.navbar-top-links -->
+        <!-- /.navbar-static-side -->
+    </nav>
+
+
+
+
+
+
+
+ <!-- MENU -->
+
+
+    <!-- Left navbar-header -->
+
+
+    {{include ('layout/subheaderSupAd.html.twig')}}
+   
+
+  <!-- Left navbar-header end -->
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+  

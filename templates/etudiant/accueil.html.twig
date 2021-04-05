@@ -1,0 +1,214 @@
+{% extends "baseSupAd.html.twig" %}
+
+{% block stylesheets %} {{  parent() }} {% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+
+{% if user %}
+
+{% for etudiant in app.user.etudiants %}
+
+
+<div class="row bg-title">
+ 
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Accueil etudiant </h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-4 col-xs-12"> 
+                    <o class="breadcrumb">
+                        <li>Etudiant </li>
+                        <li class="active"> Page d'accueil</li>
+                    </o>
+                </div>
+                
+                <!-- /.col-lg-12 -->
+            </div>
+
+<div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading"> Date d'inscription: {{etudiant.creatAt|date("Y-m-d")}}</div>
+                            <div class="panel-wrapper collapse in" aria-expanded="true">
+                                <div class="panel-body">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Info Etudiant</h3>
+                                            <hr class="m-t-0 m-b-40">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Prenoms:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static"> {{etudiant.prenoms}} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Nom de famille:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static"> {{etudiant.nom}} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Genre:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static"> {{etudiant.sexe}} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">né(e) le:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static"> {{etudiant.dateNaiss|date("Y-m-d")}} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Adresse:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static"> {{etudiant.adresse}} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Telephone:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static"> {{etudiant.telephone}} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            <h3 class="box-title">Information sur votre stage</h3>
+                                            <hr class="m-t-0 m-b-40">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Entreprise :</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static"> 
+                                                            
+                                                             {% if etudiant.entreprise == null %}
+                                                            Non renseigné
+                                                             {% endif %}
+                                                             {% if etudiant.entreprise != null %}
+                                                             {{etudiant.entreprise.nom}}
+                                                              {% endif %}
+                                                            
+                                                            
+                                                             </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Niveau:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static"> {{etudiant.niveau.nom}} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Specialite:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static"> {{etudiant.specialite.nom}} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Compétence:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static"> {{etudiant.langage}} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Debut stage:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static">
+                                                             {% if etudiant.dateDebut == null %}
+                                                            Non renseigné
+                                                             {% endif %}
+                                                             {% if etudiant.dateDebut != null %}
+                                                             {{etudiant.dateDebut|date("Y-m-d")}}
+                                                              {% endif %}
+                                                              </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-rounded btn-sm btn-info" onclick="return confirm('Vous ne pouvez modifier que vos données etudiant?');"> <i class="fa fa-pencil"></i> Edit</button>
+                                                            <button type="button" class="btn btn-rounded btn-sm btn-default">Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <!--./row-->
+
+
+
+
+
+
+
+
+
+
+{% endfor %}
+ {% endif %}
+
+ <!-- .row -->
+               
+
+
+{% endblock %}
+
+{% block javascript %} {{  parent() }} {% endblock %}

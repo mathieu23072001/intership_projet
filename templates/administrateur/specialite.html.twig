@@ -1,0 +1,78 @@
+{% extends "baseSupAd.html.twig" %}
+
+{% block stylesheets %} {{  parent() }} {% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+
+
+ {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+
+<div class="row bg-title">
+ 
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Administrateur</h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-4 col-xs-12"> 
+                    <o class="breadcrumb">
+                        <li>Admin </li>
+                        <li class="active"> Enregistrement de specialite</li>
+                    </o>
+                </div>
+                
+                <!-- /.col-lg-12 -->
+            </div>
+  
+
+
+
+
+
+
+               <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title m-b-0">Formulaire de validation</h3>
+                            <p class="text-muted m-b-30"> Information specialite</p>
+                            {{ form_start(form,{'attr':{'data-toogle':'validator'}}) }} 
+                            
+                                <div class="form-group">
+                                    
+                                    {{form_row(form.nom)}}
+                                </div>
+                                <div class="form-group">
+                                    
+                                    {{form_row(form.color)}}
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                
+                               
+                               
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-rounded btn-sm btn-primary">valider</button>
+                                </div>
+
+                               </div>
+
+
+                                   
+                </div>
+            </div>
+        </div>
+    </div>
+            
+                            
+
+  {{ form_end(form) }}
+
+
+ {% endblock %}
+
+{% block javascript %} {{  parent() }} {% endblock %}

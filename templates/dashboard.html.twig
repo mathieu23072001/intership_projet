@@ -1,0 +1,58 @@
+
+{% extends "base.html.twig" %}
+
+{% block stylesheets %} {{  parent() }} {% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+<!-- Page Content -->
+    
+        
+
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Codeigniter Admin</h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="" target="_blank" class="btn pull-right m-l-20 btn-info btn-rounded btn-sm">Buy Now</a>
+                    <ol class="breadcrumb">
+                        <li><a href="{{ asset('admin/dashboard/')}}">Home</a></li>
+                        <li class="active"> <?php echo $page_title; ?></li>
+                    </ol>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+
+
+
+            <!--  row    ->
+               <?php echo $main_content; ?>
+                <!-- /.row -->
+
+        
+        <!-- /.container-fluid -->
+        
+    
+    <!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+<!-- jQuery -->
+  {% endblock %}
+
+{% block javascript %} {{  parent() }} {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

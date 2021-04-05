@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Prefecture{% endblock %}
+
+{% block body %}
+    <h1>Edit Prefecture</h1>
+
+    {{ include('prefecture/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('prefecture_index') }}">back to list</a>
+
+    {{ include('prefecture/_delete_form.html.twig') }}
+{% endblock %}

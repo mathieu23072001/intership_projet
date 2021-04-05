@@ -1,0 +1,72 @@
+{% extends "baseSupAd.html.twig" %}
+
+{% block stylesheets %} 
+
+{{  parent() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" >  
+{% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+
+<div class="row bg-title">
+ 
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title"> <B>Statistiques Offres/Specialite</B> </h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                    <o class="breadcrumb">
+                        <li>Admin </li>
+                        <li class="active"> statistiques</li>
+                    </o>
+                </div>
+                
+                <!-- /.col-lg-12 -->
+            </div>
+
+
+
+
+<canvas id="specialites" width="400" height="100"></canvas>
+
+
+<script>
+let specialites = document.querySelector("#specialites")
+    let speciaGraph = new Chart(specialites, {
+        type: "pie",
+        data: {
+            labels: {{speciaNom|raw}},
+            datasets: [{
+                label: "Répartition des specialites",
+                data: {{speciaCount|raw}},
+                backgroundColor: {{speciaColor|raw}}
+            
+            }]
+        }
+    })
+
+</script>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block javascript %} 
+
+
+
+
+
+
+
+ {% endblock %}

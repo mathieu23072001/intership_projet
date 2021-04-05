@@ -1,0 +1,122 @@
+ {% extends "baseSupAd.html.twig" %}
+
+{% block stylesheets %} {{  parent() }} {% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+
+
+
+<div class="row bg-title">
+ 
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Liste des publications </h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                    <o class="breadcrumb">
+                        <li>Entreprise </li>
+                        <li class="active"> Liste publications</li>
+                    </o>
+                </div>
+                
+                <!-- /.col-lg-12 -->
+            </div>
+                                            
+ 
+                                                
+                                                
+                                            
+                                        
+
+
+ 
+ <div class="row">
+
+
+
+
+
+{% for offre in offres %}
+
+
+
+                    <div class="col-md-4">
+                        <div class="white-box">
+                            <h3 class="box-title">{{offre.titre}} : <small>  <B> {{offre.langage}} </B></small></h3>
+                            <!-- sample modal content -->
+                            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">{{offre.creatAt|date("Y-m-d")}}�</button>
+                                            <h4 class="modal-title" id="myLargeModalLabel">Entreprise:     <B>{{offre.entreprise.nom}}</B></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h4>Description du projet</h4>
+                                            <p>{{offre.description|raw}}<br>.</p>
+                                           
+                                        </div>
+                                    
+                                        <div class="modal-footer">
+                                          
+                                             
+                                             
+                                        </div>
+                                      
+                                    </div>
+                                     
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
+                            <!-- Button trigger modal -->
+                            <img src="{{asset('optimum/plugins/images/model2.png')}}" alt="default" data-toggle="modal" data-target=".bs-example-modal-lg" class="model_img img-responsive" /> </div>
+                    </div>
+
+ {% endfor %}
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ </div>
+  </div>
+                    
+
+
+            {% endblock %}
+
+{% block javascript %} {{  parent() }} {% endblock %}

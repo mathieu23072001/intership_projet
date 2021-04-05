@@ -1,0 +1,15 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        etudiants:
+            uri_prefix: /images/etudiants
+            upload_destination: '%kernel.project_dir%/public/images/etudiants'
+
+        entreprises: 
+            uri_prefix: /images/entreprises
+            upload_destination: '%kernel.project_dir%/public/images/entreprises'
+
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true

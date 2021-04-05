@@ -1,0 +1,61 @@
+{% extends "baseSupAd.html.twig" %}
+
+{% block stylesheets %} {{  parent() }} {% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+
+<div class="row bg-title">
+ 
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Creation de compte </h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                    <o class="breadcrumb">
+                        <li>Etudiant </li>
+                        <li class="active"> creation de compte etudiant</li>
+                    </o>
+                </div>
+                
+                <!-- /.col-lg-12 -->
+            </div>
+
+
+<center>
+<!-- /.row -->
+ 
+{{ form_start(form,{'attr':{'class':'form-horizontal form-material'}}) }}
+               <div class="row">
+                    <div class="col-sm-12 ol-md-12 col-xs-12">
+                        <div class="white-box">
+
+                            <h3 class="box-title">Fichier ETUDIANT</h3>
+                            <label for="input-file-now-custom-2">Deposez ici votre fichier constitué d'un cv et d'une lettre de recommendation si possible</label>
+                            
+                            {{form_widget(form.name,{'attr':{'id':'input-file-now-custom-2'}})}}
+                        </div>
+                    </div>
+                    
+<div class="col-xs-12">
+          
+          </div>
+                </div>
+                <!-- .row -->
+<div class="form-group text-center m-t-20">
+          
+        </div>
+        <div class="col-sm-offset-3 col-sm-5">
+                                <a href="{{ path('app_upload_etudiant') }}">  <button type="submit" class="btn btn-info btn-rounded btn-sm" onclick="return confirm('Etes vous sure de vouloir enregister ce fichier?');"> <i class="fa fa-plus"></i>&nbsp;&nbsp;Enregister</button></a>
+                            </div>
+         {{ form_end(form) }}
+
+        
+         <p ><font color=""><h3> Votre fichier chargé sera visible pour tous les entreprises qui reçevront votre candidature   </h3></font></p>
+</center>
+
+
+{% endblock %}
+
+{% block javascript %} {{  parent() }} {% endblock %}

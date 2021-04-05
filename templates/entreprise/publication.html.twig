@@ -1,0 +1,91 @@
+
+{% extends "baseSupAd.html.twig" %}
+
+{% block stylesheets %} {{  parent() }} {% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+
+
+{% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+<div class="row bg-title">
+ 
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Publication d'offre </h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                    <o class="breadcrumb">
+                        <li>Entreprise </li>
+                        <li class="active"> publication d'offre</li>
+                    </o>
+                </div>
+                
+                <!-- /.col-lg-12 -->
+            </div>
+            </div>
+
+  
+
+
+
+
+
+
+               <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title m-b-0">Formulaire de validation</h3>
+                            <p class="text-muted m-b-30"> Saississez les informations de votre offre</p>
+                            {{ form_start(form,{'attr':{'data-toogle':'validator'}}) }} 
+
+
+                            <div class="form-group">
+                                    
+                                    {{form_row(form.specialite)}}
+                                </div>
+                            
+                                <div class="form-group">
+                                    
+                                    {{form_row(form.titre)}}
+                                </div>
+                                <div class="form-group">
+                                    
+                                    {{form_row(form.langage)}}
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    
+                                    
+                                     {{form_row(form.description)}}
+                                    <span class="help-block with-errors">Description du projet</span> </div>
+                                
+                               
+                               
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-rounded btn-sm btn-primary">valider</button>
+                                </div>
+
+                               </div>
+
+
+                                   
+                </div>
+            </div>
+        </div>
+    </div>
+            
+                            
+
+  {{ form_end(form) }}
+
+
+ {% endblock %}
+
+{% block javascript %} {{  parent() }} {% endblock %}

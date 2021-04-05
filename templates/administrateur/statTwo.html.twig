@@ -1,0 +1,69 @@
+{% extends "baseSupAd.html.twig" %}
+
+{% block stylesheets %} 
+
+{{  parent() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" >  
+{% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+
+<div class="row bg-title">
+ 
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title"> <B>Statistiques Offres/Jour</B> </h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                    <o class="breadcrumb">
+                        <li>Admin </li>
+                        <li class="active"> statistiques</li>
+                    </o>
+                </div>
+                
+                <!-- /.col-lg-12 -->
+            </div>
+
+
+
+
+<canvas id="offres" width="400" height="100"></canvas>
+
+
+<script>
+let offres = document.querySelector("#offres")
+    let offresGraph = new Chart(offres, {
+        type: "line",
+        data: {
+            labels: {{dates|raw}},
+            datasets: [{
+                label: "Nombres d'offres par jour",
+                data: {{offresCount|raw}},
+                backgroundColor: ["turquoise","pink","blue","red","orange","green","grey"]
+                
+            
+            }]
+        }
+    })
+
+</script>
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block javascript %} 
+
+
+
+
+
+
+
+ {% endblock %}

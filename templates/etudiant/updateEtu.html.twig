@@ -1,0 +1,62 @@
+{% extends "baseSupAd.html.twig" %}
+
+{% block stylesheets %} {{  parent() }} {% endblock %}
+
+{% block title %} {{  parent() }} {% endblock %}
+
+
+{% block body %}
+
+
+  
+
+
+
+
+
+
+               <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title m-b-0">Formulaire de validation</h3>
+                            <p class="text-muted m-b-30"> Dernière etape </p>
+                            {{ form_start(form,{'attr':{'data-toogle':'validator'}}) }} 
+                            
+                                <div class="form-group">
+                                    
+                                    {{form_row(form.specialite)}}
+                                </div>
+                                <div class="form-group">
+                                    
+                                    {{form_row(form.niveau)}}
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    
+                                    
+                                     {{form_row(form.langage)}}
+                                    <span class="help-block with-errors">Vos compétences et langages de programmation</span> </div>
+                                
+                               
+                               
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-rounded btn-sm btn-primary">valider</button>
+                                </div>
+
+                               </div>
+
+
+                                   
+                </div>
+            </div>
+        </div>
+    </div>
+            
+                            
+
+  {{ form_end(form) }}
+
+
+ {% endblock %}
+
+{% block javascript %} {{  parent() }} {% endblock %}
