@@ -3,12 +3,7 @@
 namespace App\Controller\Etudiant;
 
 use App\Entity\Etudiant;
-use App\Entity\ChangePassword;
 use App\Form\EtudiantType;
-use App\services\swiftmailer;
-use App\service;
-
-use App\Form\ResetPasswordType;
 use App\Repository\UserRepository;
 use Doctrine\DBAL\Types\StringType;
 use Symfony\Component\HttpFoundation\Request;
