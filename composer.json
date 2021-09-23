@@ -10,6 +10,7 @@
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.2",
         "doctrine/doctrine-migrations-bundle": "^3.0",
+        "doctrine/migrations": "^3.2",
         "doctrine/orm": "^2.8",
         "friendsofsymfony/ckeditor-bundle": "^2.3",
         "phpdocumentor/reflection-docblock": "^5.2",
@@ -90,6 +91,10 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+
+        "compile": [
+            "php bin/console doctrine:migrations:migrate"
         ]
     },
     "conflict": {
